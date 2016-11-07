@@ -4,11 +4,9 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-import demo.*;
-
 
 /**
- * Created by 151260D on 11/7/2016.
+ * Created by chitboon on 10/23/15.
  */
 public class BookDBAO {
 

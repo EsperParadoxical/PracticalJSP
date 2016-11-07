@@ -2,11 +2,15 @@
   Created by IntelliJ IDEA.
   User: 151260D
   Date: 11/7/2016
-  Time: 4:20 PM
+  Time: 5:40 PM
   To change this template use File | Settings | File Templates.
 --%>
 <html>
 <head><title>Duke's Bookstore</title></head>
+<%@ page import="demo.*" %>
+    <%
+   BookDetails book = (BookDetails)request.getAttribute("book");
+%>
 <body bgcolor="#ffffff">
 <center>
     <hr>
@@ -15,14 +19,10 @@
     <br> &nbsp;
     <hr>
 </center>
-
-
-<h2>**title**</h2>&nbsp; by<em> **author** </em> (**year**)<br> <br>
+<h2><%= book.getTitle() %></h2>&nbsp; by<em> <%= book.getFirstName() + " " + book.getSurname() %> </em> (<%= book.getYear() %>)<br> <br>
 <h4>Here's what the critcs say: </h4>
 <blockquote>What a cool book.</blockquote>
-<h4>Our Price: **price**</h4>
-
-
-<p><strong><a href="/bookcatalog?bookId=208">Add to Cart</a> <a href="/catalog">Continue Shopping</a></strong></p>
+<h4>Our Price: <%= book.getPrice() %></h4>
+<p><strong><a href="/bookcatalog?bookId=<%= book.getBookId() %>">Add to Cart</a> <a href="/bookcatalog">Continue Shopping</a></strong></p>
 </body>
 </html>
